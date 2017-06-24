@@ -6,15 +6,17 @@
   <div>
     <h1><a href="">WEConnect</a></h1>
   </div>
-  <p>published: 24.06.2017 14:56</p>
-  <h2><a href="">My first post</a></h2>
-  <p>데헿</p>
-  </div>
-
+  {% for post in posts %}
   <div>
-    <p>published: 24.06.2017 14:57</p>
-    <h2><a href="">My second post</a></h2>
-    <p>으힛</p>
+  <p>published: {{ post.published_date}}</p>
+  <h2><a href="">{{ post.title }}</a></h2>
+  <p> {{ post.text|linebreaksbr }}</p>
   </div>
+  <div>
+    <p>published: {{ post.published_date}}</p>
+    <h2><a href="">{{ post.title }}</a></h2>
+    <p>{{ post.text|linebreaksbr }}</p>
+  </div>
+  {% endfor %}
 </body>
 </html>
